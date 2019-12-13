@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { fetchSmurfs } from "../state/actions";
 
@@ -36,11 +36,11 @@ class Smurfs extends Component {
     );
   }
 }
-Smurfs.propTypes = {
-  fetchSmurfs: PropTypes.func.isRequired,
-  smurfs:PropTypes.array.isRequired,
-  newSmurf: PropTypes.object
-}
+// Smurfs.propTypes = {
+//   fetchSmurfs: PropTypes.func.isRequired,
+//   smurfs:PropTypes.array.isRequired,
+//   newSmurf: PropTypes.object
+// }
 const mapStateToProps = state => ({
   smurfs: state.smurfs.smurfs,//state.smurfs is reducer.  smurfs(items) is piece of state to go in this property.
 newSmurf: state.smurfs.smurf

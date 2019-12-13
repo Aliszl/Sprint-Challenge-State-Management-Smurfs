@@ -24,6 +24,7 @@ class SmurfForm extends Component {
 
     const smurf = {
       name: this.state.name,
+      age: this.state.age,
       height: this.state.height
     };
 

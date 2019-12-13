@@ -1,8 +1,7 @@
 import { FETCH_SMURFS, NEW_SMURF } from "./types";
 
 const initialState={
-    // items:[],
-    // item:{}
+   
     smurfs:[],
     smurf:{}
 }
@@ -18,7 +17,7 @@ export function smurfReducer(state=initialState, action){
           case NEW_SMURF:
           return {
               ...state,
-              snurf: action.payload
+              smurf: action.payload
           }
         default:
           return state;

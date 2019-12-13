@@ -1,7 +1,7 @@
 import { NEW_SMURF, FETCH_SMURFS } from "./types"; //or import * as types from './Types'; () then types.FETCH_SMURFS)
 // import axios from "axios";
-
 export const fetchSmurfs = () => dispatch => {
+    // this.state = { name:'',age:'', height:'' };
   console.log("fetching");
 
   fetch("http://localhost:3333/smurfs")
@@ -21,9 +21,10 @@ export const fetchSmurfs = () => dispatch => {
 export const createSmurf = (smurfData) => dispatch => {
 console.log("action");
     fetch("http://localhost:3333/smurfs",{
-        method: 'POST',
+        method: 'PATCH',
         headers: {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            "Access-Control-Origin": "*"
         },
         body: JSON.stringify(smurfData)
     })

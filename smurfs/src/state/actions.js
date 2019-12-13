@@ -2,7 +2,7 @@ import { NEW_SMURF, FETCH_SMURFS } from "./types"; //or import * as types from '
 // import axios from "axios";
 export const fetchSmurfs = () => dispatch => {
     // this.state = { name:'',age:'', height:'' };
-  console.log("fetching");
+  console.log("fetching inside fetchSmurfs");
 
   fetch("http://localhost:3333/smurfs")
     .then(res => res.json())
@@ -19,7 +19,7 @@ export const fetchSmurfs = () => dispatch => {
 };
 
 export const createSmurf = (smurfData) => dispatch => {
-console.log("action");
+console.log(" patching inside createSmurf");
     fetch("http://localhost:3333/smurfs",{
         method: 'PATCH',
         headers: {
@@ -35,8 +35,8 @@ console.log("action");
           payload: smurf
         })
      
-      );
-    //   .catch(err => {
-    //     debugger;
-    //   });
+      )
+      .catch(err => {
+        debugger;
+      });
   };

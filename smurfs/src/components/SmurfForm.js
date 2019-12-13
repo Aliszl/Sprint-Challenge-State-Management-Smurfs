@@ -6,10 +6,13 @@ import { createSmurf } from "../state/actions";
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
+    
+
     this.state = {
-      title: "",
-      body: ""
-    };
+        name: "",
+        age:"",
+        height: ""
+      };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -27,8 +30,9 @@ class SmurfForm extends Component {
       age: this.state.age,
       height: this.state.height
     };
-
+    console.log(" before createSmurf() invoked in onsubmit");
     this.props.createSmurf(smurf);
+    console.log(" after createSmurf() invoked in onsubmit");
 
 
   }
@@ -43,7 +47,7 @@ class SmurfForm extends Component {
             <br />
             <input
               type="text"
-              name="title"
+              name="name"
               value={this.state.name}
               onChange={this.onChange}
             /><br/>
@@ -62,7 +66,7 @@ class SmurfForm extends Component {
             <label htmlFor="">height:</label>
             <br />
             <input
-              name="body"
+              name="height"
               value={this.state.height}
               onChange={this.onChange}
             ></input>

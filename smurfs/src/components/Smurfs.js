@@ -11,8 +11,9 @@ class Smurfs extends Component {
   }
 
   componentDidMount() {
-    console.log("fetch");
+    console.log("before fetchfetchsmurfs()");
   this.props.fetchSmurfs();
+  console.log("after fetchfetchsmurfs()");
   }
 
   componentDidUpdate(nextProps){

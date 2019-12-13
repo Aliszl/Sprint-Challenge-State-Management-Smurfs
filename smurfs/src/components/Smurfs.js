@@ -17,9 +17,10 @@ class Smurfs extends Component {
   }
 
   componentDidUpdate(nextProps){
-    if (nextProps.newSmurf){
-      this.props.smurfs.unshift(nextProps.newSmurf)
-    }
+    this.props.fetchSmurfs();
+    // if (nextProps.newSmurf){
+    //   this.props.smurfs.unshift(nextProps.newSmurf)
+    // }
   }
   render() {
     const smurfItems = this.props.smurfs.map(smurf => (

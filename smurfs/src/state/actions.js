@@ -1,5 +1,5 @@
 import { NEW_SMURF, FETCH_SMURFS } from "./types"; //or import * as types from './Types'; () then types.FETCH_SMURFS)
-// import axios from "axios";
+import axios from "axios";
 export const fetchSmurfs = () => dispatch => {
     // this.state = { name:'',age:'', height:'' };
   console.log("fetching inside fetchSmurfs");
@@ -20,15 +20,9 @@ export const fetchSmurfs = () => dispatch => {
 
 export const createSmurf = (smurfData) => dispatch => {
 console.log(" patching inside createSmurf");
-    fetch("http://localhost:3333/smurfs",{
-        method: 'PATCH',
-        headers: {
-            'content-type': 'application/json',
-            "Access-Control-Origin": "*"
-        },
-        body: JSON.stringify(smurfData)
-    })
-      .then(res => res.json())
+console.log(smurfData);
+    axios.post("http://localhost:3333/smurfs",smurfData)
+    //   .then(res => res.json())
       .then(smurf =>
         dispatch({
           type: NEW_SMURF,
@@ -40,3 +34,12 @@ console.log(" patching inside createSmurf");
         debugger;
       });
   };
+
+//   {
+//     method: 'PUSH',
+//     headers: {
+//         'content-type': 'application/json',
+//         "Access-Control-Origin": "*"
+//     },
+//     body: JSON.stringify(smurfData)
+// }
